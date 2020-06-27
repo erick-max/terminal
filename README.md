@@ -1,4 +1,4 @@
-# terminal-
+# terminal
 python实现多级跳转登入跳板机
 ```
 #!/usr/bin/env python3
