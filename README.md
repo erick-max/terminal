@@ -51,3 +51,38 @@ $ chmod 777 /usr/local/bin/iterm2-*
         Instant: checked
 ```
 
+- macos终端bash-shell修改
+```
+创建并写入如下内容
+[erick@ErickdeAir ~]$ cat .bash_profile
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]'
+PS1="$PS1"'\[\033[32m\]'
+PS1="$PS1"'\u@\h '
+PS1="$PS1"'\[\033[33m\]'
+PS1="$PS1"'\W'
+PS1="$PS1"'\[\033[0m\]'
+export PS1="[$PS1]\$ "
+
+在如下文件中添加
+[erick@ErickdeAir ~]$ cat /etc/profile
+alias ll='ls -lG'
+alias ls='ls -G'
+alias grep='grep --color=auto'
+```
+
+- macos终端zsh-shell修改
+```
+在如下文件中修改和添加
+[erick@ErickdeAir ~]$ cat /etc/zshrc
+# Default prompt
+#PS1="%n@%m %1~ %# "
+PS1="[%n@%m %1~]$ "
+autoload -U colors && colors
+PROMPT="[%{$fg[green]%}%n@%m %{$reset_color%}%{$fg[yellow]%}%1~%{$reset_color%}]$ "
+
+alias ll='ls -lhG'
+alias ls='ls -G'
+alias grep='grep --color=auto'
+```
