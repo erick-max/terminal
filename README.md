@@ -98,7 +98,7 @@ def main():
             elif select in ["q","quit","exit"]:
                 exit(0)
         except Exception as ex:
-            print("异常退出",ex)
+            print("异常退出")
             exit(0)
 
 if __name__ == "__main__":
